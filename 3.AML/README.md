@@ -2,11 +2,9 @@
 
 Start from [Azure Notebooks](https://notebooks.azure.com/)
 
-## Connect to AML 
+## Connect to AML
 
 ## Logging
-
-## 
 
 ## Auto ML
 
