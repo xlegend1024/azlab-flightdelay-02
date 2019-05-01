@@ -1,46 +1,42 @@
-# Azure Hands-on Lab - Data Engnieering
+# Azure Hands-on Lab - Data Science Project
 
 Experience data engineering with Flight delay data sets
 
-## Create Azure Data Lake Storage Gen 2
-
-Create ADLS gen 2 to store flights data
-Use Azure Portal to create the service and explorer
-Create Filesystem
-* consumption
-* curated
-* model
-* raw
-* scratchdir
-* staging
-
-## Create CosmosDB
-
-Create CosmosDB to store some part of data 
-Use query to access data 
-
-## Create Azure Data Facotry 
+## 1. Create Azure Data Facotry 
 
 Create ADF to move flight data from blob to ADLS gen 2
 Use Copy Data tool to build data pipeline for the first time
 Use binary copy
 
-## Create Azure Databricks
+## 2. Access Flight Data
 
 Create Azure Databricks and import notebooks (Python)
+```
+https://github.com/xlegend1024/azlab-flightdelay-02/blob/master/2.ADB/FlightDelay-02.dbc
+```
+
+### 2.1 Mount ADLS gen 2
+
+### 2.2 Import Data
+
+## 3. Feature Engineering
+
+### 3.1 Feature Engineering
+
 Understand how to transform data
 
-* Mount ADLS gen 2
-* Create a table in db (SQL)
-* Run data engnieering notebooks
+### 3.1 Feature Engineering (Continue)
 
+## 4. Create Training Datasets
 
-## Create Azure Machine Learning Service 
+## 5. Model Training and Deployment
 
-Create Azure Machine Learning Service
-Understand how to log runs using Azure Notebooks
-Install Azure ML SDK on Azure Databricks
-Simple logging
-AutoML
+### 5.1 Model Selection
 
+Install Azure Machine Learning Service SDK for Python on Azure Databricks
 
+### 5.2 Deploy Model
+
+Register Models and deploy the model on ACI
+
+## 6. Model Management and Deployment using Azure Machine Learning Service
