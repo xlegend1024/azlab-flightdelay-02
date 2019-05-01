@@ -1,41 +1,30 @@
-# Azure Data Factory
+# 1. Azure Data Factory
 
 Move data from Blob to ADLS gen 2
 
-## Copy a CSV file from web to ADLS 
+## 1.1 Lab Environment Configuration
 
-https://mtcsdataai.blob.core.windows.net/flight/airport-master/AirportMasterData.csv
+### 1.1.1 Create Azure Key Vault
 
+Create Azure Key Vault from Azure Portal
 
-## Copy multiple files to ADLS
+While creating the service, make sure you add your ADF service to _Access Policy_
 
-Understand how to use parameters
+![createkeyvault](../images/1.1.0.png)
 
-### Piepeline Parameters
-
-|name|Type|Value|
-|--|--|--|
-|fileurl|Array|```[{"source":{"url":"flight/batch-scoring/BatchScoringDataset.csv"},"destination":{"fileName":"batch-scoring/BatchScoringDataset.csv"}},{"source":{"url":"flight/carrier-master/CarrierMasterData.csv"},"destination":{"fileName":"carrier-master/CarrierMasterData.csv"}},{"source":{"url":"flight/flight-transactions/FlightDelaysWithAirportCodes-part1.csv"},"destination":{"fileName":"flight-transactions/FlightDelaysWithAirportCodes-part1.csv"}},{"source":{"url":"flight/flight-transactions/FlightDelaysWithAirportCodes-part2.csv"},"destination":{"fileName":"flight-transactions/FlightDelaysWithAirportCodes-part2.csv"}},{"source":{"url":"flight/flight-transactions/FlightDelaysWithAirportCodes-part3.csv"},"destination":{"fileName":"flight-transactions/FlightDelaysWithAirportCodes-part3.csv"}},{"source":{"url":"flight/weather-ref/AirportWeatherReferenceData.csv"},"destination":{"fileName":"weather-ref/AirportWeatherReferenceData.csv"}}]```|
-
-
-### ForEach and user parameters
-
-settings
-items
-Select parameters 'fileurl'
-
-```
-@pipeline().parameters.fileurl
+When after the Azure Key Vault is created, add secret using following connection string and name is azlabblob:
+```text
+DefaultEndpointsProtocol=https;AccountName=mtcsdataai;AccountKey=d5XhBqQziobWFmcBhgFRzxP7PZZLMqqI0f9v5cCwG2F+Yemk4Z8rt75scnxdEt3GmvG84KEOeg5auZGzDE+KVw==;EndpointSuffix=core.windows.net
 ```
 
-### Copy Activity
+![addsecret](../images/1.1.1.png)
 
-User Properties
+### (Optional) 1.1.2 Create a Project in Azure DevOps for ADF
 
-|Name|Value|
-|---|---|
-|Source||
+Once you create the Azure DevOps project, you can add the git repo to ADF
 
+![AzureDevOps](../images/1.1.2.png)
 
+## 1.2 Copy a CSV file from blob to ADLS
 
-
+### 1.2.1 Create a Pipeline
